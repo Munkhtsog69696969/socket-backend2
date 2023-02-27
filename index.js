@@ -17,7 +17,12 @@ const {Server}=require("socket.io");
 const server=http.createServer(app);
 
 const io=new Server(server,{
-    origin:"https://quick-chat-frontend5.firebaseapp.com",
+    cors: {
+        origin:"https://quick-chat-frontend5.firebaseapp.com",
+        methods: ["GET", "POST"],
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
+    }
 });
 
 
