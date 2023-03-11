@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const app=express();
 
-const http=require("http");
+const https=require("https");
 
 const cors=require("cors");
 
@@ -14,11 +14,11 @@ app.use(cors());
 
 const {Server}=require("socket.io");
 
-const server=http.createServer(app);
+const server=https.createServer(app);
 
 const io=new Server(server,{
     cors: {
-        origin:"https://quick-chat-frontend.web.app/",
+        origin:"https://quick-chat-frontend.web.app",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
