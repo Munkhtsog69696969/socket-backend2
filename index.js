@@ -18,7 +18,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{
     cors: {
-        origin:"https://quick-chat-frontend5.firebaseapp.com",
+        origin:"https://quick-chat-frontend.web.app/",
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
